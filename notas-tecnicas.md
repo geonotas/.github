@@ -1,10 +1,12 @@
-# Creación del directorio principal
+# Notas técnicas
+
+## Creación del directorio principal
 ```shell
 mkdir geonotas
 cd geonotas
 ```
 
-# Creación del directorio del repositorio .github
+## Creación del directorio del repositorio .github
 ```shell
 mkdir -p .github/profile
 cd .github
