@@ -1,6 +1,6 @@
 # Notas técnicas
 
-## Creación y configuración de la organización `geonotas` en GitHub
+## Creación y configuración de la organización
 
 ### Creación de la organización `geonotas`
 En la interfaz web de [GitHub](https://github.com/), debe crearse la organización `geonotas` (`https://github.com/geonotas`).
@@ -126,28 +126,24 @@ mv references.bib referencias.bib
 
 Y se genera contenido para otros archivos.
 ```shell
-# Contenido de index.qmd
+# index.qmd
 echo "# Prefacio {.unnumbered}"  > index.qmd
-echo "Este sitio ..." >> index.qmd
+echo "Este sitio ..."           >> index.qmd
 
-# Contenido de informacion.qmd
-echo "# Información sobre conjuntos de datos" > informacion.qmd
-
-# Contenido de referencias.qmd
+# referencias.qmd
 echo "# Referencias {.unnumbered}"  > referencias.qmd
 echo "::: {#refs}"                 >> referencias.qmd
 echo ":::"                         >> referencias.qmd
 
-# Contenido de _quarto.yml
+# _quarto.yml
 echo "project:"                     > _quarto.yml
 echo "  type: book"                >> _quarto.yml
 echo "  output-dir: docs"          >> _quarto.yml
 echo ""                            >> _quarto.yml
 echo "book:"                       >> _quarto.yml
-echo "  title: geonotas"        >> _quarto.yml
+echo "  title: geonotas"           >> _quarto.yml
 echo "  chapters:"                 >> _quarto.yml
 echo "    - index.qmd"             >> _quarto.yml
-echo "    - informacion.qmd"              >> _quarto.yml
 echo "    - referencias.qmd"       >> _quarto.yml
 echo ""                            >> _quarto.yml
 echo "format:"                     >> _quarto.yml
@@ -156,10 +152,22 @@ echo "    lang: es"                >> _quarto.yml
 echo "    theme: cosmo"            >> _quarto.yml
 echo "  pdf:"                      >> _quarto.yml
 echo "    documentclass: scrreprt" >> _quarto.yml
+
+# .nojekyll (evita procesamiento adicional de Jekyll en GH Pages)
+echo "" > .nojekyll
+
+# .gitignore
+echo "/.quarto/" > .gitignore
 ```
 
 Vista previa del sitio
 ```shell
 # Vista previa
 quarto preview
+```
+
+Generación del sitio
+```shell
+# Generación
+quarto render
 ```
