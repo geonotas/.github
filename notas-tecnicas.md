@@ -1,4 +1,12 @@
 # Notas técnicas
+Este documento contiene algunas notas técnicas relacionadas con el desarrollo del sitio [https://geonotas.github.io/](https://geonotas.github.io/).
+
+Todos los componentes del sitio están almacenados en la organización [`geonotas`](https://github.com/geonotas) de [GitHub](https://github.com), incluyendo:
+
+- El repositorio [`geonotas/.github`](https://github.com/geonotas/.github). Contiene el archivo [README.md](https://github.com/geonotas/.github/blob/main/profile/README.md), con información general de la organización, y otros documentos.
+- El repositorio [`geonotas/geonotas.github.io`](https://github.com/geonotas/geonotas.github.io). Contiene el código fuente del sitio [https://geonotas.github.io/](https://geonotas.github.io/), el cual se publica mediante [GitHub Pages](https://pages.github.com/). Este sitio se desarrolló con el sistema de publicación técnica y científica [Quarto](https://quarto.org/), como un documento de tipo [libro (*book*)](https://quarto.org/docs/books/).
+
+El desarrollo se realiza en un [ambiente](https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html) del administrador de paquetes [Conda](https://docs.conda.io), el cual se instaló mediante [Miniconda](https://docs.conda.io/projects/miniconda).
 
 ## Contenido
 - [Creación de un ambiente Conda](#creaci%C3%B3n-de-un-ambiente-conda)
@@ -7,7 +15,7 @@
 - [Creación del repositorio `geonotas.github.io`](#creaci%C3%B3n-del-repositorio-geonotasgeonotasgithubio)
 
 ## Creación de un ambiente Conda
-1. Crear un ambiente [Conda](https://conda.io/).
+1. Crear un ambiente Conda.
 ```shell
 # Actualización de Conda
 conda update -n base -c conda-forge -y conda
@@ -51,9 +59,10 @@ rm -rf ~/miniconda3/miniconda.sh
 ~/miniconda3/bin/conda init bash
 
 # Hay que salir y entrar de la terminal
+exit
 ```
 
-Se detalla también el procedimiento para la desinstalación.
+Se detalla también el procedimiento para la desinstalación de Conda.
 ```shell
 # Desinstalación de Miniconda
 conda activate
@@ -61,10 +70,11 @@ conda init --reverse --all
 rm -rf ~/miniconda3
 
 # Hay que salir y entrar de la terminal
+exit
 ```
 
 ## Creación de la organización `geonotas`
-1. Crear la organización GitHub `geonotas` (`https://github.com/geonotas`) mediante la interfaz web de [GitHub](https://github.com/).
+1. Crear la organización GitHub `geonotas` (`https://github.com/geonotas`) mediante la interfaz web de [GitHub](https://github.com/) (*Create new organization*).
 
 2. Crear el directorio correspondiente en la computadora local.
 ```shell
@@ -103,7 +113,7 @@ GIT_SSH_COMMAND='ssh -i ~/.ssh/mfvargas' git push -u origin main
 ## Creación del repositorio `geonotas/geonotas.github.io`
 1. Crear el repositorio Git `geonotas/geonotas.github.io` (`https://github.com/geonotas/geonotas.github.io`) mediante la interfaz web de [GitHub](https://github.com/).
 
-2. Crear el directorio del repositorio local mediante el sistema de publicación técnica y científica [Quarto](https://quarto.org/), como un documento de tipo [libro (*book*)](https://quarto.org/docs/books/). El ambiente Conda debe estar activado.
+2. Crear el directorio del repositorio local mediante el sistema de publicación técnica y científica [Quarto](https://quarto.org/), como un documento de tipo [libro (*book*)](https://quarto.org/docs/books/). El ambiente Conda debe estar activado (con `conda activate geonotas`).
 ```shell
 # Creación del sitio web de geonotas
 quarto create-project geonotas.github.io \
@@ -157,13 +167,13 @@ touch .nojekyll
 echo "/.quarto/" > .gitignore
 ```
 
-5. Vista previa del sitio.
+5. Vista previa del documento Quarto.
 ```shell
 # Vista previa del sitio
 quarto preview
 ```
 
-6. Generar el sitio.
+6. Generar el documento Quarto.
 ```shell
 # Generación del sitio
 quarto render
