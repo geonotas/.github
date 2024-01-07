@@ -10,7 +10,7 @@
 ## Creación y configuración de la organización `geonotas`
 
 ### Creación de la organización `geonotas`
-- Crear la organización `geonotas` (`https://github.com/geonotas`) en la interfaz web de [GitHub](https://github.com/),
+- Crear la organización `geonotas` (`https://github.com/geonotas`) en la interfaz web de [GitHub](https://github.com/).
 
 - Crear el directorio correspondiente en la computadora local.
 ```shell
@@ -20,7 +20,7 @@ cd geonotas
 ```
 
 ### Creación del repositorio `.github`
-- Crear el repositorio `.github` (`https://github.com/geonotas/.github`) en la organización `geonotas`.
+- Crear el repositorio `.github` (`https://github.com/geonotas/.github`) de la organización `geonotas` en la interfaz web de [GitHub](https://github.com/).
 
 - Crear el directorio del repositorio local.
 ```shell
@@ -46,8 +46,8 @@ git remote add origin git@github.com:geonotas/.github
 GIT_SSH_COMMAND='ssh -i ~/.ssh/mfvargas' git push -u origin main
 ```
 
-## Creación de un ambiente Conda
-- Crear un ambiente [Conda](https://conda.io/) para instalar y administrar el software que se utiliza.
+## Creación y configuración de un ambiente Conda
+- Crear un ambiente [Conda](https://conda.io/) e instalar los paquetes.
 ```shell
 # Actualización de Conda
 conda update -n base -c conda-forge -y conda
@@ -104,9 +104,9 @@ rm -rf ~/miniconda3
 ```
 
 ## Creación del repositorio `geonotas.github.io`
-En la organización `geonotas`, debe crearse el repositorio `geonotas.github.io` (`https://github.com/geonotas/geonotas.github.io`), para contener el código fuente del sitio web en https://geonotas.github.io/.
+- Crear el repositorio `geonotas.github.io` (`https://github.com/geonotas/geonotas.github.io`) de la organización `geonotas` en la interfaz web de [GitHub](https://github.com/).
 
-El repositorio local se crea mediante el sistema de publicación técnica y científica [Quarto](https://quarto.org/), como un documento de tipo [libro (*book*)](https://quarto.org/docs/books/). El ambiente Conda debe estar activado.
+- Crear el repositorio local mediante el sistema de publicación técnica y científica [Quarto](https://quarto.org/), como un documento de tipo [libro (*book*)](https://quarto.org/docs/books/). El ambiente Conda debe estar activado.
 
 ```shell
 # Creación del sitio web de geonotas
@@ -117,7 +117,7 @@ quarto create-project geonotas.github.io \
 cd geonotas.github.io
 ```
 
-Se borran y renombran algunos de los archivos generados automáticamente por Quarto.
+- Borrar y renombrar algunos de los archivos generados automáticamente por Quarto.
 ```shell
 # Borrado y renombramiento de archivos
 rm intro.qmd
@@ -125,7 +125,7 @@ rm summary.qmd
 mv references.bib referencias.bib
 ```
 
-Se genera contenido para otros archivos.
+- Generar contenido para otros archivos.
 ```shell
 # index.qmd
 echo "# Prefacio {.unnumbered}"  > index.qmd
@@ -161,19 +161,19 @@ touch .nojekyll
 echo "/.quarto/" > .gitignore
 ```
 
-Vista previa del sitio.
+- Vista previa del sitio.
 ```shell
 # Vista previa
 quarto preview
 ```
 
-Generación del sitio.
+- Generar el sitio.
 ```shell
 # Generación
 quarto render
 ```
 
-Inicialización del repositorio local y sincronización con el repositorio remoto.
+- Inicializar el repositorio local y sincronizarlo con el repositorio remoto.
 ```shell
 # Inicialización del repositorio local y sincronización con el repositorio remoto
 git init
