@@ -1,62 +1,24 @@
 # Notas técnicas
 
 ## Contenido
-- [Creación y configuración de la organización `geonotas`](#creaci%C3%B3n-y-configuraci%C3%B3n-de-la-organizaci%C3%B3n-geonotas)
-    - [Creación de la organización `geonotas`](#creaci%C3%B3n-de-la-organizaci%C3%B3n-geonotas)
-    - [Creación del repositorio `.github`](#creaci%C3%B3n-del-repositorio-github)
 - [Creación de un ambiente Conda](#creaci%C3%B3n-de-un-ambiente-conda)
+- [Creación de la organización `geonotas`](#creaci%C3%B3n-de-la-organizaci%C3%B3n-geonotas)
+- [Creación del repositorio `.github`](#creaci%C3%B3n-del-repositorio-github)
 - [Creación del repositorio `geonotas.github.io`](#creaci%C3%B3n-del-repositorio-geonotasgithubio)
 
-## Creación y configuración de la organización `geonotas`
-
-### Creación de la organización `geonotas`
-- Crear la organización `geonotas` (`https://github.com/geonotas`) en la interfaz web de [GitHub](https://github.com/).
-
-- Crear el directorio correspondiente en la computadora local.
-```shell
-# Creación de un directorio para la organización geonotas
-mkdir geonotas
-cd geonotas
-```
-
-### Creación del repositorio `.github`
-- Crear el repositorio `.github` (`https://github.com/geonotas/.github`) de la organización `geonotas` en la interfaz web de [GitHub](https://github.com/).
-
-- Crear el directorio del repositorio local.
-```shell
-# Creación de un directorio para el repositorio .github
-mkdir -p .github/profile
-cd .github
-```
-
-- Crear el archivo `profile/README.md`.
-```shell
-# Creación de profile/README.md
-echo "# GeoNotas" > profile/README.md
-```
-
-- Inicializar el repositorio local y sincronizarlo con el repositorio remoto.
-```shell
-# Inicialización del repositorio local y sincronización con el repositorio remoto
-git init
-git add .
-git commit -m "Commit inicial"
-git branch -M main
-git remote add origin git@github.com:geonotas/.github
-GIT_SSH_COMMAND='ssh -i ~/.ssh/mfvargas' git push -u origin main
-```
-
 ## Creación y configuración de un ambiente Conda
-- Crear un ambiente [Conda](https://conda.io/) e instalar los paquetes.
+1. Crear un ambiente [Conda](https://conda.io/).
 ```shell
 # Actualización de Conda
 conda update -n base -c conda-forge -y conda
 
-# Creación del ambiente e instalación de paquetes
+# Creación del ambiente
 conda create -y -n geonotas
 conda activate geonotas
 conda config --env --add channels conda-forge
 conda config --env --set channel_priority strict
+
+# Instalación de paquetes
 conda install -c conda-forge -y mamba
 mamba install -c conda-forge -y \
   quarto \
@@ -67,17 +29,16 @@ conda deactivate
 conda activate geonotas
 ```
 
+**Borrado del ambiente**
 En caso de ser necesario, el ambiente puede borrarse con los siguientes comandos.
-
 ```shell
 # Borrado del ambiente Conda
 conda deactivate
 conda env remove -n geonotas
 ```
 
-### Instalación de Conda/Miniconda
-En caso de ser necesario, se recomienda instalar Conda mediante [Miniconda](https://docs.conda.io/projects/miniconda/).
-
+**Instalación y desinstalación de Conda/Miniconda**
+En caso de ser necesario instalar Conda, se recomienda utilizar el instalador [Miniconda](https://docs.conda.io/projects/miniconda/).
 ```shell
 # Instalación de Miniconda
 mkdir -p ~/miniconda3
@@ -92,8 +53,7 @@ rm -rf ~/miniconda3/miniconda.sh
 # Hay que salir y entrar de la terminal
 ```
 
-Se incluye también el procedimiento para la desinstalación.
-
+Se detalla también el procedimiento para la desinstalación.
 ```shell
 # Desinstalación de Miniconda
 conda activate
@@ -103,11 +63,47 @@ rm -rf ~/miniconda3
 # Hay que salir y entrar de la terminal
 ```
 
+## Creación y configuración de la organización `geonotas`
+1. Crear la organización GitHub `geonotas` (`https://github.com/geonotas`) mediante la interfaz web de [GitHub](https://github.com/).
+
+2. Crear el directorio correspondiente en la computadora local.
+```shell
+# Creación de un directorio para la organización geonotas
+mkdir geonotas
+cd geonotas
+```
+
+## Creación del repositorio `geonotas/.github`
+1. Crear el repositorio Git remoto `geonotas/.github` (`https://github.com/geonotas/.github`) mediante la interfaz web de [GitHub](https://github.com/).
+
+2. Crear el directorio del repositorio local.
+```shell
+# Creación de un directorio para el repositorio .github
+mkdir -p .github/profile
+cd .github
+```
+
+3. Crear el archivo `profile/README.md`.
+```shell
+# Creación de profile/README.md
+echo "# GeoNotas" > profile/README.md
+```
+
+4. Inicializar el repositorio local y sincronizarlo con el repositorio remoto.
+```shell
+# Inicialización del repositorio local y sincronización con el repositorio remoto
+git init
+git add .
+git commit -m "Commit inicial"
+git branch -M main
+git remote add origin git@github.com:geonotas/.github
+GIT_SSH_COMMAND='ssh -i ~/.ssh/mfvargas' git push -u origin main
+```
+
 ## Creación del repositorio `geonotas.github.io`
-- Crear el repositorio `geonotas.github.io` (`https://github.com/geonotas/geonotas.github.io`) de la organización `geonotas` en la interfaz web de [GitHub](https://github.com/).
+1. Crear el repositorio Git `geonotas/geonotas.github.io` (`https://github.com/geonotas/geonotas.github.io`) mediante la interfaz web de [GitHub](https://github.com/).
 
-- Crear el repositorio local mediante el sistema de publicación técnica y científica [Quarto](https://quarto.org/), como un documento de tipo [libro (*book*)](https://quarto.org/docs/books/). El ambiente Conda debe estar activado.
-
+2. Crear el directorio del repositorio local mediante el sistema de publicación técnica y científica [Quarto](https://quarto.org/), como un documento de tipo [libro (*book*)](https://quarto.org/docs/books/). El ambiente Conda debe estar activado.
 ```shell
 # Creación del sitio web de geonotas
 quarto create-project geonotas.github.io \
@@ -117,7 +113,7 @@ quarto create-project geonotas.github.io \
 cd geonotas.github.io
 ```
 
-- Borrar y renombrar algunos de los archivos generados automáticamente por Quarto.
+3. Borrar y renombrar algunos de los archivos generados automáticamente por Quarto.
 ```shell
 # Borrado y renombramiento de archivos
 rm intro.qmd
@@ -125,7 +121,7 @@ rm summary.qmd
 mv references.bib referencias.bib
 ```
 
-- Generar contenido para otros archivos.
+4. Generar contenido para otros archivos.
 ```shell
 # index.qmd
 echo "# Prefacio {.unnumbered}"  > index.qmd
@@ -161,19 +157,19 @@ touch .nojekyll
 echo "/.quarto/" > .gitignore
 ```
 
-- Vista previa del sitio.
+5. Vista previa del sitio.
 ```shell
 # Vista previa
 quarto preview
 ```
 
-- Generar el sitio.
+6. Generar el sitio.
 ```shell
 # Generación
 quarto render
 ```
 
-- Inicializar el repositorio local y sincronizarlo con el repositorio remoto.
+7. Inicializar el repositorio local y sincronizarlo con el repositorio remoto.
 ```shell
 # Inicialización del repositorio local y sincronización con el repositorio remoto
 git init
