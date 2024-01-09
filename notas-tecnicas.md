@@ -135,8 +135,8 @@ mv references.bib referencias.bib
 4. Generar contenido para otros archivos.
 ```shell
 # index.qmd
-echo "# Prefacio {.unnumbered}"                           > index.qmd
-echo "Ejemplos de procesamiento de datos geoespaciales." >> index.qmd
+echo "# Introducción {.unnumbered}"                           > index.qmd
+echo "Este libro presenta ejemplos de procesamiento de datos geoespaciales mediante lenguajes de programación y bibliotecas de software." >> index.qmd
 
 # referencias.qmd
 echo "# Referencias {.unnumbered}"  > referencias.qmd
