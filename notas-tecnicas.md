@@ -136,8 +136,9 @@ mv references.bib referencias.bib
 ```shell
 # index.qmd
 echo "# Introducción {.unnumbered}" > index.qmd
-echo "Este libro presenta ejemplos de procesamiento de datos geoespaciales "
-     "mediante lenguajes de programación y bibliotecas de software." >> index.qmd
+echo "Este libro presenta ejemplos de procesamiento de datos geoespaciales " \
+     "mediante lenguajes de programación y bibliotecas de software." \
+     >> index.qmd
 
 # referencias.qmd
 echo "# Referencias {.unnumbered}"  > referencias.qmd
