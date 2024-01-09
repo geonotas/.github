@@ -84,7 +84,7 @@ cd geonotas
 ```
 
 ## Creación del repositorio `geonotas/.github`
-1. Crear el repositorio Git remoto `geonotas/.github` (`https://github.com/geonotas/.github`) mediante la interfaz web de [GitHub](https://github.com/).
+1. Crear el repositorio Git remoto `geonotas/.github` (`https://github.com/geonotas/.github`) mediante la interfaz web de [GitHub](https://github.com/) (*Create new repository*).
 
 2. Crear el directorio del repositorio local.
 ```shell
@@ -96,7 +96,8 @@ cd .github
 3. Crear el archivo `profile/README.md`.
 ```shell
 # Creación de profile/README.md
-echo "# GeoNotas" > profile/README.md
+echo "# GeoNotas"                                         > profile/README.md
+echo "Ejemplos de procesamiento de datos geoespaciales." >> profile/README.md
 ```
 
 4. Inicializar el repositorio local y sincronizarlo con el repositorio remoto.
@@ -111,7 +112,7 @@ GIT_SSH_COMMAND='ssh -i ~/.ssh/mfvargas' git push -u origin main
 ```
 
 ## Creación del repositorio `geonotas/geonotas.github.io`
-1. Crear el repositorio Git `geonotas/geonotas.github.io` (`https://github.com/geonotas/geonotas.github.io`) mediante la interfaz web de [GitHub](https://github.com/).
+1. Crear el repositorio Git `geonotas/geonotas.github.io` (`https://github.com/geonotas/geonotas.github.io`) mediante la interfaz web de [GitHub](https://github.com/) (*Create new repository*).
 
 2. Crear el directorio del repositorio local mediante el sistema de publicación técnica y científica [Quarto](https://quarto.org/), como un documento de tipo [libro (*book*)](https://quarto.org/docs/books/). El ambiente Conda debe estar activado (con `conda activate geonotas`).
 ```shell
@@ -134,8 +135,8 @@ mv references.bib referencias.bib
 4. Generar contenido para otros archivos.
 ```shell
 # index.qmd
-echo "# Prefacio {.unnumbered}"  > index.qmd
-echo "Este sitio ..."           >> index.qmd
+echo "# Prefacio {.unnumbered}"                           > index.qmd
+echo "Ejemplos de procesamiento de datos geoespaciales." >> index.qmd
 
 # referencias.qmd
 echo "# Referencias {.unnumbered}"  > referencias.qmd
@@ -164,7 +165,7 @@ echo "    documentclass: scrreprt" >> _quarto.yml
 touch .nojekyll
 
 # .gitignore
-echo "/.quarto/" > .gitignore
+echo "/.quarto/"  > .gitignore
 ```
 
 5. Vista previa del documento Quarto.
