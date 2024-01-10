@@ -131,6 +131,7 @@ rm intro.qmd
 rm summary.qmd
 rm references.bib
 rm references.qmd
+rm cover.png
 ```
 
 4. Generar contenido inicial para otros archivos.
