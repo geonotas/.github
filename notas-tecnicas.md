@@ -130,6 +130,7 @@ cd geonotas.github.io
 rm intro.qmd
 rm summary.qmd
 rm references.bib
+rm references.qmd
 ```
 
 4. Generar contenido inicial para otros archivos.
