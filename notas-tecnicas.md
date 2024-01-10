@@ -126,24 +126,19 @@ cd geonotas.github.io
 
 3. Borrar y renombrar algunos de los archivos generados automáticamente por Quarto.
 ```shell
-# Borrado y renombramiento de archivos
+# Borrado de archivos innecesarios
 rm intro.qmd
 rm summary.qmd
-mv references.bib referencias.bib
+rm references.bib
 ```
 
-4. Generar contenido para otros archivos.
+4. Generar contenido inicial para otros archivos.
 ```shell
 # index.qmd
 echo "# Introducción {.unnumbered}" > index.qmd
 echo "Este libro presenta ejemplos de procesamiento de datos geoespaciales " \
      "mediante lenguajes de programación y bibliotecas de software." \
      >> index.qmd
-
-# referencias.qmd
-echo "# Referencias {.unnumbered}"  > referencias.qmd
-echo "::: {#refs}"                 >> referencias.qmd
-echo ":::"                         >> referencias.qmd
 
 # _quarto.yml
 echo "project:"                     > _quarto.yml
@@ -154,14 +149,11 @@ echo "book:"                       >> _quarto.yml
 echo "  title: GeoNotas"           >> _quarto.yml
 echo "  chapters:"                 >> _quarto.yml
 echo "    - index.qmd"             >> _quarto.yml
-echo "    - referencias.qmd"       >> _quarto.yml
 echo ""                            >> _quarto.yml
 echo "format:"                     >> _quarto.yml
 echo "  html:"                     >> _quarto.yml
 echo "    lang: es"                >> _quarto.yml
 echo "    theme: cosmo"            >> _quarto.yml
-echo "  pdf:"                      >> _quarto.yml
-echo "    documentclass: scrreprt" >> _quarto.yml
 
 # .nojekyll (evita procesamiento adicional de Jekyll en GH Pages)
 touch .nojekyll
