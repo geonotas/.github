@@ -131,7 +131,6 @@ rm intro.qmd
 rm summary.qmd
 rm references.bib
 rm references.qmd
-rm cover.png
 ```
 
 4. Generar contenido inicial para otros archivos.
@@ -149,6 +148,13 @@ echo "  output-dir: docs"          >> _quarto.yml
 echo ""                            >> _quarto.yml
 echo "book:"                       >> _quarto.yml
 echo "  title: GeoNotas"           >> _quarto.yml
+echo "  subtitle: Ejemplos de procesamiento de datos espaciales"  >> _quarto.yml
+echo "  reader-mode: true"         >> _quarto.yml
+echo "  cover-image: cover.png"    >> _quarto.yml
+echo "  favicon: cover.png"        >> _quarto.yml
+echo "  site-url: https://geonotas.github.io"                     >> _quarto.yml
+echo "  repo-url: https://github.com/geonotas/geonotas.github.io" >> _quarto.yml
+echo ""                            >> _quarto.yml
 echo "  chapters:"                 >> _quarto.yml
 echo "    - index.qmd"             >> _quarto.yml
 echo ""                            >> _quarto.yml
@@ -156,6 +162,7 @@ echo "format:"                     >> _quarto.yml
 echo "  html:"                     >> _quarto.yml
 echo "    lang: es"                >> _quarto.yml
 echo "    theme: cosmo"            >> _quarto.yml
+echo "    code-link: true"         >> _quarto.yml
 
 # .nojekyll (evita procesamiento adicional de Jekyll en GH Pages)
 touch .nojekyll
